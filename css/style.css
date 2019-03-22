@@ -437,7 +437,7 @@ nav ul li.mail-btn a:hover,nav ul li.mail-btn a.active {
     vertical-align: middle;
 }
 .banner-content{
-    width: calc(50% - 2px);
+    width: calc(45% - 2px);
 }
 .banner-img {
     margin: 0 -30px 0 -100px;

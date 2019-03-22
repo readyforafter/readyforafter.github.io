@@ -1,0 +1,970 @@
+@charset "utf-8";
+
+/* Default Reset Css Starts Here
+===============================================================*/
+*{box-sizing: border-box;}
+html,body,body div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,figure,footer,header,menu,nav,section,time,mark,audio,video,details,summary{margin:0;padding:0;border:0;font-size:100%;font-weight:normal;vertical-align:baseline;background:transparent;box-sizing: border-box;}
+article,aside,figure,footer,header,nav,section,details,summary{display:block;}
+img,object,embed{max-width:100%;}
+html{overflow-y:scroll;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent;}
+del{text-decoration:line-through;}
+abbr[title],dfn[title]{border-bottom:1px dotted #000;cursor:help;}
+table{border-collapse:collapse;border-spacing:0;}
+th{font-weight:bold;vertical-align:bottom;}
+td{font-weight:normal;vertical-align:top;}
+hr{display:block;height:1px;border:0;margin:1em 0;padding:0;}
+input,select{vertical-align:middle;}
+pre{white-space:pre; /* CSS2 */white-space:pre-wrap; /* CSS 2.1 */white-space:pre-line; /* CSS 3 (and 2.1 as well, actually) */word-wrap:break-word; /* IE */}
+input[type="radio"]{vertical-align:text-bottom;}
+input[type="checkbox"]{vertical-align:bottom;}
+select,input,textarea{font:99% sans-serif;}
+table{font-size:inherit;}
+small{font-size:85%;}
+strong{font-weight:bold;}
+td,td img{vertical-align:top;}
+sub,sup{font-size:75%;line-height:0;position:relative;}
+sup{top:-0.5em;}
+sub{bottom:-0.25em;}
+pre,code,kbd,samp{font-family:monospace,sans-serif;}
+.clickable,label,input[type=button],input[type=submit],input[type=file],button{cursor:pointer;}
+button,input,select,textarea{margin:0;}
+
+/* make buttons play nice in IE */
+button,input[type=button]{width:auto;overflow:visible;}
+p {margin-bottom: 20px;}
+a {color: #2c204d;text-decoration: none;outline: none;}
+a:hover, a:focus {text-decoration: none;}
+ul, ol{
+    text-align: left;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+/* Let's Clear Some Floats
+===================================================*/
+.clearfix:before,.clearfix:after{content:"\0020";display:block;height:0;overflow:hidden;}
+.clearfix:after{clear:both;}
+.clearfix{zoom:1;}
+
+/* Fonts
+===================================================*/
+@font-face {
+    font-family: 'kollektifbold';
+    src: url('../fonts/kollektif-bold-webfont.eot');
+    src: url('../fonts/kollektif-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/kollektif-bold-webfont.woff2') format('woff2'),
+         url('../fonts/kollektif-bold-webfont.woff') format('woff'),
+         url('../fonts/kollektif-bold-webfont.ttf') format('truetype'),
+         url('../fonts/kollektif-bold-webfont.svg#kollektifbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'sofia_prosemibold';
+    src: url('../fonts/sofia_pro_semibold-webfont.eot');
+    src: url('../fonts/sofia_pro_semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/sofia_pro_semibold-webfont.woff2') format('woff2'),
+         url('../fonts/sofia_pro_semibold-webfont.woff') format('woff'),
+         url('../fonts/sofia_pro_semibold-webfont.ttf') format('truetype'),
+         url('../fonts/sofia_pro_semibold-webfont.svg#sofia_prosemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+	font-display: fallback;
+}
+
+/* Default Css Start Here
+===================================================*/
+body{
+    -webkit-text-size-adjust:none;
+    -webkit-font-smoothing: antialiased;
+    font-size: 13px;
+    line-height: 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: #2c204d;
+}
+.main{
+    max-width:975px;
+    margin:0 auto;
+    padding: 0 30px;
+}
+.section-gap{
+    margin: 40px 40px 0;
+}
+.wrapper {
+    overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
+    font-weight: inherit;
+}
+h1{
+    color: #2c204d;
+    font-size: 62px;
+    font-family: 'kollektifbold', sans-serif;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+h2{
+    font-size: 58px;
+    font-family: 'kollektifbold', sans-serif;
+    margin-bottom: 20px;
+    line-height: 1;
+}
+h3{
+    font-size: 36px;
+    font-family: 'kollektifbold', sans-serif;
+    margin-bottom: 20px;
+    line-height: 1;
+}
+h4{
+    font-family: 'kollektifbold', sans-serif;
+    font-size: 30px;
+    margin-bottom: 20px;
+    line-height: 1;
+}
+h5{
+    font-family: 'kollektifbold', sans-serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+    line-height: 1;
+}
+nav ul li a,
+.pink-btn,
+.yellow-btn,
+.form-btn{
+    transition: all 0.4s linear;
+    -webkit-transition: all 0.4s linear;
+    -moz-transition: all 0.4s linear;
+    -ms-transition: all 0.4s linear;
+    -o-transition: all 0.4s linear;
+}
+.flex-container {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.three-column-wrapper{
+    margin: 0 auto;
+}
+.mid-content-sec .three-column-wrapper .flex-item,
+.meet-the-fam-sec .three-column-wrapper .flex-item{
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 33.33%;
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    justify-content: flex-start;
+    padding: 0 15px;
+}
+.center-icon{
+    height: 66px;
+    width: 66px;
+    background: #fff;
+    margin: 0 auto;
+    border-radius: 60%;
+    text-align: center;
+}
+button, .button, .form-btn{
+    color: #fff;
+    font-size: 13px;
+    line-height: 3.5;
+    text-transform: uppercase;
+    font-family: 'kollektifbold', sans-serif;
+    display: inline-block;
+    background: #2c204d;
+    border-radius: 5px;
+    width: 116px;
+    height: 47px;
+    border: none;
+}
+button:hover, .button:hover, .form-btn:hover,
+button:focus, .button:focus, .form-btn:focus{
+    text-decoration: none;
+    background: #f08276;
+    outline: none;
+}
+.pink-btn{
+    background: #f08276;
+}
+.pink-btn:hover,
+.pink-btn:focus{
+    text-decoration: none;
+    background: #2c204d;
+}
+.yellow-btn{
+    background: #fbcc82;
+}
+.yellow-btn:hover,
+.yellow-btn:focus{
+    text-decoration: none;
+    background: #2c204d;
+}
+.slider-center-icon {
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 97px;
+    width: 97px;
+    margin: 0 auto;
+    border-radius: 60%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.slick-slide:focus{
+    outline: none;
+}
+/* Arrows */
+.slick-prev,
+.slick-next
+{
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus
+{
+    color: transparent;
+    outline: none;
+    background: transparent;
+}
+.slick-prev:hover:before,
+.slick-prev:focus:before,
+.slick-next:hover:before,
+.slick-next:focus:before
+{
+    color: #edd3d7;
+}
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before
+{
+    color: #edd3d7;
+}
+
+.slick-prev:before,
+.slick-next:before
+{
+    font-family: 'slick';
+    font-size: 20px;
+    line-height: 1;
+    color: black;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-prev
+{
+    left: -48px;
+}
+[dir='rtl'] .slick-prev
+{
+    right: -25px;
+    left: auto;
+}
+.slick-prev:before
+{
+    content:"\f053";
+    font-family: FontAwesome;
+}
+[dir='rtl'] .slick-prev:before
+{
+    content:"\f054";
+    font-family: FontAwesome;
+}
+.slick-next
+{
+    right: -48px;
+}
+[dir='rtl'] .slick-next
+{
+    right: auto;
+    left: -25px;
+}
+.slick-next:before
+{
+    content:"\f054";
+    font-family: FontAwesome;
+}
+[dir='rtl'] .slick-next:before
+{
+    content:"\f053";
+    font-family: FontAwesome;
+}
+.animation-sec.animated {
+    opacity: 1;
+    transition: all ease 0.5s;
+    transition-delay: 0.5s;
+}
+.animation-sec {
+    opacity: 0;
+}
+/* Header Css Start Here
+===================================================*/
+#header {
+    padding: 20px 0;
+    position: fixed;
+    top: 20px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+}
+#header .main {
+    max-width: 1300px;
+    position: relative;
+    z-index: 1;
+}
+.headerbg{
+    top:0;
+    background: #fff;
+    transition: all 0.4s linear;
+    -webkit-transition: all 0.4s linear;
+    -moz-transition: all 0.4s linear;
+    -ms-transition: all 0.4s linear;
+    -o-transition: all 0.4s linear;
+}
+#header.headerbg{
+    top:0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    padding: 10px 0;
+}
+#header.headerbg .logo{
+    width: 110px;
+    height: 45px;
+    transition: all 0.4s linear;
+    -webkit-transition: all 0.4s linear;
+    -moz-transition: all 0.4s linear;
+    -ms-transition: all 0.4s linear;
+    -o-transition: all 0.4s linear;
+}
+#header.headerbg .logo img {
+    margin-top: 8px;
+}
+.logo {
+    width: 125px;
+    height: 46px;
+    float: left;
+    display: block;
+}
+.logo img {
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+}
+
+nav {
+    float: right;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1;
+}
+nav ul li {
+    display: inline-block;
+    margin: 0;
+    vertical-align: middle;
+}
+nav ul li a {
+    color: #2c204d;
+    display: block;
+    font-family: 'kollektifbold', sans-serif;
+    text-transform: capitalize;
+    padding: 0 24px;
+}
+nav ul li a:hover, 
+nav ul li a.active {
+    color: #f08276;
+    text-decoration: none;
+}
+nav ul li a:focus {
+    text-decoration: none;
+}
+nav ul li.mail-btn a:last-child{
+    padding: 20px 16px;
+    background: #fffaf1;
+    margin-left: 15px;
+    height: 58px;
+    width: 58px;
+    border-radius: 60%;
+}
+nav ul li.mail-btn a:hover,nav ul li.mail-btn a.active {
+    background: #f08276;
+}
+/* Banner Css Start Here
+===================================================*/
+.banner-sec{
+    position: relative;
+    padding: 67px 0 0;
+}
+.banner-sec .main{
+    max-width: 1366px;
+}
+.banner-img,
+.banner-content{
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+}
+.banner-content{
+    width: calc(50% - 2px);
+}
+.banner-img {
+    margin: 0 -30px 0 -100px;
+    width: calc(50% + 100px);
+}
+.banner-content{
+    padding-top: 98px;
+}
+.banner-content h1{
+    max-width: 85%;
+}
+.banner-content p{
+    font-size: 22px;
+    line-height: 1.2;
+    max-width: 75%;
+    font-family: 'sofia_prosemibold', sans-serif;
+}
+/* Mid section Css Start Here
+===================================================*/
+.mid-content-sec{
+    padding: 50px 0 22px;
+    text-align: center;
+}
+.three-column-content figure{
+    display: inline-block;
+    text-align: center;
+    padding: 24px;
+    border-radius: 60%;
+    height: 98px;
+    width: 98px;
+    margin-bottom: 20px;
+    background-color: #fffaf1;
+}
+.three-column-content h4{
+    font-size: 20px;
+    margin-bottom: 7px;
+}
+/* Testimonial section Css Start Here
+===================================================*/
+.testimonial-sec{
+    background-color: #fffaf1;
+    padding: 65px 0 100px;
+    text-align: center;
+}
+.quote-icon{
+    padding: 22px 0px 20px;
+    margin-bottom: 28px;
+    font-size: 25px;
+}
+.testimonial-slider{
+    margin: 0 auto;
+    max-width: 90%;
+}
+.testimonial-slider h3{
+    color: #2c204d;
+    font-size: 36px;
+    line-height: 1.2;
+    margin-bottom: 13px;
+}
+.testimonial-name,
+.testimonial-year{
+    color: #f08276;
+    font-size: 16px;
+    margin-bottom: 0px;
+    font-family: 'kollektifbold', sans-serif;
+}
+.testimonial-slider .slick-dots{
+    bottom: -50px;
+    position: absolute;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+}
+.testimonial-slider .slick-dots li button:before{
+    display: none;
+}
+.testimonial-slider .slick-dots li{
+    margin: 0 6px;
+    position: relative;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    cursor: pointer;
+}
+.testimonial-slider .slick-dots li button{
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    width: 8px;
+    height: 8px;
+    padding: 4px;
+    cursor: pointer;
+    color: #2c204d;
+    border: 0;
+    outline: none;
+    background: #2c204d;
+    border-radius: 60px;
+}
+.testimonial-slider .slick-dots li button:hover, 
+.testimonial-slider .slick-dots li button:focus {
+    outline: none;
+}
+.testimonial-slider .slick-dots li.slick-active button{
+    background: #f08276;
+}
+.testimonial-slider.slick-dotted.slick-slider {
+    margin-bottom: 0px;
+}
+/* After Party School Common Css Start Here
+===================================================*/
+.after-party-group figure img,
+.after-school-group figure img {
+    display: block;
+    width: 100%;
+}
+.after-party-school h2{
+    line-height: 1.2;
+    margin-bottom: 12px;
+}
+.sub-header-slider{
+    max-width: 75%;
+    margin: 0 auto 20px;
+}
+.after-party-school h4{
+    line-height: 1.2;
+}
+.after-party-school h3{
+    font-size: 40px;
+    line-height: 1.2;
+    margin-bottom: 13px;
+}
+.after-party-school p{
+    font-size: 22px;
+    line-height: 1.2;
+    font-family: 'sofia_prosemibold', sans-serif;
+    margin: 0 auto 40px;
+    max-width: 77%;
+}
+.join-us-box {
+    border-radius: 5px;
+    background: #fff;
+    padding: 30px 47px;
+    margin: 0 10px;
+}
+.join-us-box .slider-center-icon{
+    background-color: #fff8fd;
+}
+.join-us-box h4{
+    font-size: 18px;
+    margin-bottom: 12px;
+    width: 100%;
+}
+.join-us-box p{
+    font-size: 12px;
+    color: #000000;
+    margin-bottom: 0px;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.4;
+}
+.join-us-box p strong{
+    text-transform: uppercase;
+}
+.after-school-sec .join-us-box p strong{
+    text-transform: none;
+}
+.join-us-box .pink-btn{
+    height: 46px;
+    width: 161px;
+    margin-top: 21px;
+}
+.after-party-school-form,
+.subscribe-form{
+    padding-top: 95px;
+}
+.after-party-school-form h5{
+    line-height: 1.2;
+    margin: 0 auto 40px;
+    max-width: 65%;
+}
+.subscribe-form h5{
+    margin-bottom: 35px;
+}
+/* After Party section Css Start Here
+===================================================*/
+.after-party-sec{
+    background-color: #fff8fd;
+    padding: 100px 0;
+    text-align: center;
+    overflow: hidden;
+}
+.bouquet-icon{
+    padding: 14px 20px;
+    margin-bottom: 15px;
+}
+.after-party-group{
+    padding-bottom: 80px;
+}
+.after-party-group .main{
+    max-width: 1099px;
+}
+/* After School section Css Start Here
+===================================================*/
+.after-school-sec{
+    background-color: #fffaf1;
+    padding: 100px 0;
+    text-align: center;
+    overflow: hidden;
+}
+.checklist-icon{
+    padding: 18px 18px;
+    margin-bottom: 25px;
+}
+.join-us-box .yellow-btn{
+    height: 46px;
+    width: 161px;
+    margin-top: 21px;
+}
+.agenda-sec{
+    padding: 45px 0 20px;
+}
+.agenda-sec h3{
+    font-size: 24px;
+}
+.agenda-outer-sec{
+    text-align: left;
+    padding: 35px 77px;
+}
+.agenda-part{
+    float: left;
+    width: 50%;
+    padding: 0 15px;
+}
+.agenda-part p
+{
+    font-size: 17px;
+    font-weight: 600;
+    border-bottom: 1px solid #fde5be;
+    margin-bottom: 24px;
+    padding-bottom: 18px;
+    font-family: 'Montserrat', sans-serif;
+}
+.agenda-part p span{
+    font-size: 18px;
+    font-weight: 700;
+    color: #fbcc82;
+    padding-right: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+.after-school-sec .join-us-box .slider-center-icon{
+    background-color: #fefaf1;
+}
+.after-school-group{
+    padding-bottom: 82px;
+}
+.after-school-group .main{
+    max-width: 1099px;
+}
+/* After Platform section Css Start Here
+===================================================*/
+.after-platform-sec{
+    background-color: #fdf3f1;
+    padding: 115px 0 145px;
+    text-align: center;
+    position: relative;
+    overflow:  hidden;
+}
+.after-platform-sec .main{
+    position: relative;
+    z-index: 1;
+}
+.after-platform-sec h4{
+    margin-bottom: 0;
+}
+.after-platform-sec .subscribe-form{
+    padding-top: 87px;
+}
+.responsive-icon{
+    padding: 19px 15px;
+    margin-bottom: 18px;
+}
+/* Form Css Start Here
+===================================================*/
+.form-row{
+    margin: 0 -15px;
+}
+.form-outer{
+    max-width: 607px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.row:after, .row:before{
+    content: '';
+    display: table;
+    clear: both;
+}
+.form-control{
+    display: block;
+    width: 100%;
+    border: none;
+    background: #fff;
+    padding: 13.5px 13px;
+    background-color: #fff;
+    border-radius: 5px;
+    /* margin-bottom: 25px; */
+    color: #000;
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    height: 46px;
+}
+.form-control:focus {
+    outline: none;
+}
+textarea.form-control {
+    height: 76px;
+}
+::-webkit-input-placeholder { /* Edge */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: #000;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #000;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+::placeholder {
+     font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: #000;
+}
+[class*='col-']{
+    padding: 0 15px;
+    float: left;
+}
+.col-3{
+    width: 25%;
+}
+.col-6{
+    width: 50%;
+}
+.col-9{
+    width: 75%;
+}
+.col-12{
+    width: 100%;
+}
+textarea{
+    height: 47px;
+    resize: none;
+}
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=number],
+input[type="submit"],
+textarea,
+button{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Meet the fam section Css Start Here
+===================================================*/
+.meet-the-fam-sec{
+    padding: 95px 0 83px;
+    text-align: center;
+}
+.meet-the-fam-sec .main{
+    max-width: 1300px;
+}
+.meet-the-fam-sec h2{
+    line-height: 1.2;
+    margin-bottom: 70px;
+}
+.meet-the-fam-sec .flex-item{
+    margin-bottom: 33px;
+    text-align:center;
+}
+.meet-the-fam-sec .flex-item h6 {
+    font-size:20px;
+    line-height:27px;
+    color:#2c204d;
+    font-family: 'sofia_prosemibold';
+    margin: 20px 0 15px;
+}
+.fam-image{ 
+    width: 175px;
+    height: 175px; 
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.meet-the-fam-sec .flex-item p{
+    text-align: left;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #2c204d;
+    font-family: 'Montserrat',sans-serif;
+}
+.meet-fam-form-sec h5{
+    text-align:center;
+}
+.meet-fam-form-sec{
+    padding-top: 55px;
+}
+.meet-fam-form-sec form .form-btn{
+    background: #f08276;
+}
+.meet-fam-form-sec form .form-btn:hover,
+.meet-fam-form-sec form .form-btn:focus{
+    background: #2c204d;
+}
+.meet-fam-form-sec .form-control{
+    background-color: #f7f8fa;
+}
+.meet-the-fam-sec .three-column-wrapper .flex-item{
+    padding:  0 45px;
+}
+/* Footer Css Start Here
+===================================================*/
+.footer-sec{
+    background-color:#2C204D;
+    padding:220px 0;
+    text-align:center;
+}
+.footer-logo{
+    display: block;
+    width: 90px;
+    height: 110px;
+    margin:  0 auto;
+}
+.footer-logo img {
+    display: block;
+    width: 100%;
+}
+.footer-sec h3{
+    font-size: 42px;
+    color: #fff;
+    margin-top: 18px;
+    margin-bottom: 5px;
+}
+.footer-sec p{
+    margin-bottom: 0;
+}
+.footer-sec p a{
+    text-decoration:none;
+    color:#F08276;
+    font-size:25px;
+    line-height: 1.1;
+    font-family: 'kollektifbold', sans-serif;
+}
+.footer-sec p a{
+    font-size: 23px;
+}
+/*Mobile Menu */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    color: #2c214c;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    line-height: 33px;
+    font-size: 22px;
+    padding: 10px 0;
+}
+.menu-icon .menu-box {
+    width: 58px;
+    height: 58px;
+    padding: 20px 18px;
+    left: 0;
+    background: #fefaf1;
+    border-radius: 60%;
+    text-align: center;
+}
+.menu-icon .menu-box span {
+    width: 100%;
+    height: 2px;
+    margin-bottom: 6px;
+    background: #2c214c;
+    display: block;
+    border-radius: 2px;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+.menu-icon.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(6px) translateX(5px);
+    -webkit-transform: rotate(45deg) translateY(6px) translateX(5px);
+}
+.menu-icon.active span:nth-child(2) {
+    opacity: 0;
+}
+.menu-icon.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-7px) translateX(6px);
+    -webkit-transform: rotate(-45deg) translateY(-7px) translateX(6px);
+}
+.get-in-touch{
+    display: none;
+}
+
+/* Mailchimp Form And Normal Form CSS */
+.form-fields {
+    margin-bottom: 25px;
+}
+.error{
+    margin-bottom: 25px;
+    color: red;
+    float: left;
+}
+.form-control.error{
+    margin-bottom: 0px;
+}
+.response h4,
+.successmsg h4{
+    font-size: 18px;
+    padding-top: 30px;
+}
+
+.successmsg{
+    display: none;
+}

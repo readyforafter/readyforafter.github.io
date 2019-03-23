@@ -3,9 +3,9 @@
 	if (isset($_REQUEST['name1']) && isset($_REQUEST['email1']) && isset($_REQUEST['message1'])) {
 	
 	//Edit admin mail and subject
-	 $admin_email = "luice.phillips@gmail.com"; // < Change this to receive enquiries
+	 $admin_email = "hello@after.community"; // < Change this to receive enquiries
 	 $subject = "After Party - Registration";
-	 $email_from = "luice.phillips@gmail.com"; // < From email, needs to be your server email, such as email@yourdomain.com
+	 $email_from = "hello@after.community"; // < From email, needs to be your server email, such as email@yourdomain.com
 
 	 //Sanitize inputs
 	 $name1 = filter_var($_REQUEST['name1'], FILTER_SANITIZE_STRING);

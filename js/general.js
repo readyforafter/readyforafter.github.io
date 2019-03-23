@@ -86,7 +86,8 @@ $(document).ready(function(){
 	  	arrows: false,
 	    autoplay: true,
 	    autoplaySpeed: 3000,
-        fade: true
+        fade: true,
+        adaptiveHeight: true
   	});
     // Sub header Slider
     $(".sub-header-slider").slick({
@@ -306,3 +307,5 @@ $(window).scroll(function(){
 $(window).resize(function(){
    meetFamSlider();
 });
+
+

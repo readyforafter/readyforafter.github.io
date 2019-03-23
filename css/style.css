@@ -437,17 +437,17 @@ nav ul li.mail-btn a:hover,nav ul li.mail-btn a.active {
     vertical-align: middle;
 }
 .banner-content{
-    width: calc(45% - 2px);
+    width: calc(50% - 2px);
 }
 .banner-img {
     margin: 0 -30px 0 -100px;
     width: calc(50% + 100px);
 }
 .banner-content{
-    padding-top: 98px;
+    padding-top: 70px;
 }
 .banner-content h1{
-    max-width: 85%;
+    max-width: 80%;
 }
 .banner-content p{
     font-size: 22px;
@@ -555,8 +555,7 @@ nav ul li.mail-btn a:hover,nav ul li.mail-btn a.active {
 .after-party-group figure img,
 .after-school-group figure img {
     display: block;
-    width: 75%;
-    margin: auto;
+    width: 80%;
 }
 .after-party-school h2{
     line-height: 1.2;

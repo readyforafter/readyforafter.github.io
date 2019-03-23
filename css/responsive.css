@@ -18,9 +18,6 @@
 	.meet-the-fam-sec .main {
 	    max-width: 1000px;
 	}
-	.banner-content h1 {
-	    max-width: 100%;
-	}
 	.banner-content {
 	    padding-top: 0px;
 	    padding-left: 30px;
@@ -50,6 +47,9 @@
 	}
 	h4{
 		font-size: 25px;
+	}
+	.banner-content h1 {
+    	max-width: 100%;
 	}
 	.banner-content p {
 	    font-size: 20px;

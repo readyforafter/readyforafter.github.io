@@ -556,6 +556,7 @@ nav ul li.mail-btn a:hover,nav ul li.mail-btn a.active {
 .after-school-group figure img {
     display: block;
     width: 80%;
+    margin: auto;
 }
 .after-party-school h2{
     line-height: 1.2;

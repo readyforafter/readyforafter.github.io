@@ -47,7 +47,7 @@ function meetFamSlider(){
                 slidesToShow: 2,
                 slidesToScroll: 1,
                 arrows: false,
-                autoplay: true,
+                autoplay: false,
                 autoplaySpeed: 3000,
                 responsive: [
                 {
@@ -97,7 +97,7 @@ $(document).ready(function(){
         slidesToScroll: 1,
         arrows: false,
         autoplay: true,
-        autoplaySpeed: 3000,
+        autoplaySpeed: 2000,
         fade: true
     });
   	// Join Us Slider
@@ -107,7 +107,7 @@ $(document).ready(function(){
 	  	slidesToShow: 3,
 	  	slidesToScroll: 1,
 	  	arrows: true,
-	    autoplay: true,
+	    autoplay: false,
 	    autoplaySpeed: 3000,
         responsive: [
                 {

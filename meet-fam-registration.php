@@ -88,10 +88,10 @@ if(($_POST['FNAME'] != '') && isset($_POST['FNAME'])){
   $regFname = '';
 }
 
-if(($_POST['LNAME'] != '') && isset($_POST['LNAME'])){
-  $regLname = $_POST['LNAME'];
+if(($_POST['MESSAGE'] != '') && isset($_POST['MESSAGE'])){
+  $regMessage = $_POST['MESSAGE'];
 } else {
-  $regLname = '';
+  $regMessage = '';
 }
 
 if(($_POST['EMAIL'] != '') && isset($_POST['EMAIL'])){
@@ -107,7 +107,7 @@ if(($_POST['EMAIL'] != '') && isset($_POST['EMAIL'])){
 $merge_vars = Array( 
 
     'FNAME' => $regFname,
-    'LNAME' => $regLname,
+    'MESSAGE' => $regMessage,
     'EMAIL' => $regEmail
     //'PHONE' => $regPhone
 );

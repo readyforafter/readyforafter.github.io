@@ -78,7 +78,7 @@ function rudr_mailchimp_subscriber_status( $email, $status, $list_id, $api_key, 
 }
 
 $api_key = "04226fc047393ea9cd26649cdab08a9b-us20"; //api key
-$list_id = "a896d1a0a8"; // list id
+$list_id = "3d232bc982"; // list id
 
 //echo $_POST['FNAME']; exit();
 
@@ -100,7 +100,7 @@ if(($_POST['EMAIL'] != '') && isset($_POST['EMAIL'])){
   $regEmail = '';
 }
 //$regFname = $_POST['FNAME'];
-//$regMessage = $_POST['MESSAGE'];
+//$regLname = $_POST['MESSAGE'];
 //$regEmail = $_POST['EMAIL'];
 //$regPhone = $_POST['PHONE'];
 //echo "ffsdfsd".$regFname; exit();

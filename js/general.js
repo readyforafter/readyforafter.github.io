@@ -162,32 +162,134 @@ $(document).ready(function(){
         }        
     });
 
-    // Exit intent
-    function addEvent(obj, evt, fn) {
-        if (obj.addEventListener) {
-            obj.addEventListener(evt, fn, false);
+
+    $("#formReg-party").validate({
+      ignore: [],
+      rules: {
+        name1:{ required: true},
+        email1:{ required: true,email:true},
+        message1:{ required: true,},
+      },
+      errorClass:'error',
+      validClass:'valid',
+      errorElement:'div',
+      highlight: function (element, errorClass, validClass) { 
+        $(element).addClass(errorClass).removeClass(validClass); 
+      }, 
+      unhighlight: function (element, errorClass, validClass) { 
+        $(element).removeClass(errorClass).addClass(validClass);
+      },
+      messages: {
+        // "interest[]":"Please Select Field Of Interest",
+      },
+      errorPlacement: function(error, element) {
+        if($(element).is('input[type="checkbox"]')){
+            error.insertAfter($(element).closest(".checkbox_main"));
+        }else {
+            error.insertAfter(element);
         }
-        else if (obj.attachEvent) {
-            obj.attachEvent("on" + evt, fn);
+    },
+    submitHandler: function (form) { // for demo            
+        var form_data = $("#formReg-party").serialize();
+        var request = $.ajax({                        
+                    url: "after-party-registration.php",
+                    type: "POST",
+                    data: form_data,
+                    dataType: "json",
+                    beforeSend: function () {
+                        $('.submit-button').val('sending...').attr('disabled', 'disabled').addClass("btn-disabled");                    
+                    }
+                    , complete: function () {
+                        $('.submit-button').val('Submit').removeAttr('disabled').removeClass("btn-disabled");
+                    }
+                    ,
+                    success: function(r) {
+                    if (r.type == "success") {
+                              $('.submit-button').val('sending...').attr('disabled', 'disabled');
+                            setTimeout(function () {
+                                $('#formReg-party .successmsg').fadeIn();
+                                $('#formReg-party')[0].reset();
+                                $('.submit-button').val('Submit').removeAttr('disabled');
+                                $(".valid").removeClass("valid");
+                            }, 500);
+                    } else if (r.type == "error") {
+                        alert(r.message);
+                    }
+            },
+            error: function() {
+                //console.log('error msg');
+            }
+        });
+        return false;
+      }
+  });
+
+    $("#formReg-school").validate({
+      ignore: [],
+      rules: {
+        name2:{ required: true},
+        email2:{ required: true,email:true},
+        message2:{ required: true,},
+      },
+      errorClass:'error',
+      validClass:'valid',
+      errorElement:'div',
+      highlight: function (element, errorClass, validClass) { 
+        $(element).addClass(errorClass).removeClass(validClass); 
+      }, 
+      unhighlight: function (element, errorClass, validClass) { 
+        $(element).removeClass(errorClass).addClass(validClass);
+      },
+      messages: {
+        // "interest[]":"Please Select Field Of Interest",
+      },
+      errorPlacement: function(error, element) {
+        if($(element).is('input[type="checkbox"]')){
+            error.insertAfter($(element).closest(".checkbox_main"));
+        }else {
+            error.insertAfter(element);
         }
-    }
+    },
+    submitHandler: function (form) { // for demo            
+        var form_data = $("#formReg-school").serialize();
+        var request = $.ajax({                        
+                    url: "after-school-registration.php",
+                    type: "POST",
+                    data: form_data,
+                    dataType: "json",
+                    beforeSend: function () {
+                        $('.submit-button').val('sending...').attr('disabled', 'disabled').addClass("btn-disabled");                    
+                    }
+                    , complete: function () {
+                        $('.submit-button').val('Submit').removeAttr('disabled').removeClass("btn-disabled");
+                    }
+                    ,
+                    success: function(r) {
+                    if (r.type == "success") {
+                              $('.submit-button').val('sending...').attr('disabled', 'disabled');
+                            setTimeout(function () {
+                                $('#formReg-school .successmsg').fadeIn();
+                                $('#formReg-school')[0].reset();
+                                $('.submit-button').val('Submit').removeAttr('disabled');
+                                $(".valid").removeClass("valid");
+                            }, 500);
+                    } else if (r.type == "error") {
+                        alert(r.message);
+                    }
+            },
+            error: function() {
+                //console.log('error msg');
+            }
+        });
+        return false;
+      }
+  });
 
-    // Exit intent trigger
-    addEvent(document, 'mouseout', function(evt) {
-        if (evt.toElement == null && evt.relatedTarget == null ) {            
-            if(!$("body").hasClass("show-modal")){
-                $("body").addClass("show-modal");
-                $('.lightbox').slideDown();
-            }            
-        };
-
-    });
-
-    // Closing the Popup Box
-    $('a.close').click(function(){
-        $('.lightbox').slideUp();
-    });
-
+  $(".submit-button").click(function(){
+      setTimeout(function(){
+          $("form input.error").first().focus();
+      },50) 
+  });
 }); // end of ready function
 
 $(window).scroll(function(){

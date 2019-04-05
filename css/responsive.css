@@ -177,6 +177,9 @@
 }
 /*------------mobile landscape  view------*/
 @media (max-width:767px) {
+	.after-school-group iframe{
+		width: 100%;
+	}
 	.main{
 	    padding: 0 15px;
 	}
@@ -537,7 +540,25 @@
     	max-width: 375px;
     	margin: 0 auto 35px;
 	}
-
+	.lightbox .box{
+		padding: 85px 15px 40px;
+    	border: 7px solid #fff;
+    	width: 455px;
+	}
+	.box h2{
+		font-size: 34px;
+    	margin-bottom: 30px;
+    	line-height: 1.2;
+	}
+	#pop-up-form-reg .form-btn{
+		width: 100%;
+	}
+	.lightbox .close{
+		right: 0;
+	}
+	.box:after{
+		top: -155px;
+	}
 }
 /*----------optional css------*/
 @media (max-width:480px) {
@@ -569,6 +590,25 @@
 	.after-party-group, .after-school-group{
 		margin-top: -30px;
 	}
+	.lightbox .box{
+		width: 300px;
+	}
+	.box h2{
+		font-size: 30px;
+	}
+	.box .form-outer{
+		max-width: 100%;
+		padding:  0px;
+	}
+	.box:after{
+		padding-bottom: 80%;
+		top: -100px;
+	}
 }
 /*---------use only when design is customise-----------*/
+@media (max-width:415px) {
+.testimonial-wrapper{
+	height: 310px;
+}
+}
 

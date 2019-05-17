@@ -249,6 +249,67 @@
                     </form>
                 </div>
                 <!--End Email Inquiry-->
+
+
+
+
+
+
+<!-- Load Stripe.js on your website. -->
+<script src="https://js.stripe.com/v3"></script>
+
+<!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+<button
+  style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
+  id="checkout-button-sku_F5IljcridbIn5b"
+  role="link"
+>
+  Checkout
+</button>
+
+<div id="error-message"></div>
+
+<script>
+  var stripe = Stripe('pk_live_xq9KlI2YfIEGaNK1d3P2hcHu00McVJeEBd');
+
+  var checkoutButton = document.getElementById('checkout-button-sku_F5IljcridbIn5b');
+  checkoutButton.addEventListener('click', function () {
+    // When the customer clicks on the button, redirect
+    // them to Checkout.
+    stripe.redirectToCheckout({
+      items: [{sku: 'sku_F5IljcridbIn5b', quantity: 1}],
+
+      // Do not rely on the redirect to the successUrl for fulfilling
+      // purchases, customers may not always reach the success_url after
+      // a successful payment.
+      // Instead use one of the strategies described in
+      // https://stripe.com/docs/payments/checkout/fulfillment
+      successUrl: window.location.protocol + '//after.community/success',
+      cancelUrl: window.location.protocol + '//after.community/canceled',
+    })
+    .then(function (result) {
+      if (result.error) {
+        // If `redirectToCheckout` fails due to a browser or network
+        // error, display the localized error message to your customer.
+        var displayError = document.getElementById('error-message');
+        displayError.textContent = result.error.message;
+      }
+    });
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
             </div>
         </div>
         <!-- Products Section End Here -->
@@ -267,11 +328,6 @@
                         <div class="fam-image orange" style="background-image: url('images/joseph.png')" title="Joseph Weissgold"></div>
                         <h6>Joseph Weissgold</h6>
                         <p>Joseph wants to be remembered not for what he did but how we went about doing it. His plan is to select a place with a beautiful view where people can ‘visit’ him after he’s gone.</p>
-                    </div>
-                    <div class="flex-item">
-                        <div class="fam-image purple" style="background-image: url('images/sallome.png')" title="Sallomé"></div>
-                        <h6>Sallomé</h6>
-                        <p>Sallomé wants to be remembered as an abolitionist who helped to bring about the end of forms of indentured servitude in the United States.</p>
                     </div>
                 </div>
                 <!-- Begin Mailchimp Signup Form -->
